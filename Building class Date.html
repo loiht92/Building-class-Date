@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let myDate = function (day, month, year) { // khoi tao phuong thuc//
+        this.day = day;
+        this.month = month;
+        this.year = year;
+
+        this.setDate = function (day, month, year) {//thiet dat lai ngay thang nam//
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        };
+
+        this.getDay = function () { // xay dung phuong thuc tra ve ngay thang nam//
+            return this.day;
+        };
+        this.getMonth = function () {
+            return this.month;
+        };
+        this.getYear = function () {
+            return this.year;
+        };
+        this.setDay = function (day) { // xay dung phuong thuc thiet dat lai ngay thang nam//
+            this.day = day;
+        };
+        this.setMonth = function (month) {
+            this.month = month;
+        };
+        this.setYear = function (year) {
+            this.year = year;
+        };
+        this.toString = function () {
+            return (''+this.day < 10 ? '0'+this.day : this.day) + '/' + (''+this.month < 10 ? '0'+this.month : this.month) + '/' + this.year;
+        }
+    };
+
+    let date = new myDate(2, 2, 2019); // tao doi tuong voi phuong thuc vua tao//
+    let day = date.getDay(); // truy cap den phuong thuc cua lop Date//
+    let month = date.getMonth();
+    let year = date.getYear();
+    document.write("Ngày, tháng,năm :" +day + "/" + month + "/" + year); // hien thi ra//
+    date.setDay(10);
+    date.setMonth(10);
+    date.setYear(2019);
+    document.write("<br>");
+    document.write("Sau khi thiết lập lại:" +date.getDay() + "/" + date.getMonth() + "/" + date.getYear());// goi doi tuong moi thong qua date//
+
+    date.setDate(1,2,2011);
+    document.write("<br>");
+    document.write(" Trước khi định dạng:" +date.getDay() + "/"+date.getMonth() +"/" +date.getYear());
+    document.write("<br>");
+    document.write(" Sau khi định dạng :" +date.toString());
+</script>
+</body>
+</html>
+</body>
+</html>
